@@ -1,0 +1,28 @@
+﻿@model WebClinica.Models.Medico
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Delete", "Medico", FormMethod.Post))
+        {
+            <p>
+                Esta seguro que desea eliminar al Medico:
+                @Html.DisplayFor(model => model.Nombre), @Html.DisplayFor(model => model.Apellido)
+            </p>
+            <input type="submit" value="Delete" />
+            @Html.ActionLink("Volver al Index", "Index")
+        }
+
+    </div>
+</body>
+</html>

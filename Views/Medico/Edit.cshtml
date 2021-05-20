@@ -1,0 +1,39 @@
+﻿@model WebClinica.Models.Medico
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Edit", "Medico", FormMethod.Post))
+        {
+            <p>
+                @Html.LabelFor(model => model.Nombre)
+                @Html.EditorFor(model => model.Nombre)
+                @Html.ValidationMessageFor(model => model.Nombre)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Apellido)
+                @Html.EditorFor(model => model.Apellido)
+                @Html.ValidationMessageFor(model => model.Apellido)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Matricula)
+                @Html.EditorFor(model => model.Matricula)
+                @Html.ValidationMessageFor(model => model.Matricula)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Especialidad)
+                @Html.EditorFor(model => model.Especialidad)
+                @Html.ValidationMessageFor(model => model.Especialidad)
+            </p>
+            <input type="submit" value="Edit" />
+            @Html.ActionLink("Volver a Index", "Index")
+        }
+    </div>
+</body>
+</html>

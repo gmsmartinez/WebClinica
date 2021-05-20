@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebClinica.Models.Medico>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <p>
+            @Html.ActionLink("Crear Medico","Create")
+        </p>
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Matricula)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Especialidad)
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelitem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelitem => item.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelitem => item.Matricula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelitem => item.Especialidad)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Detalles","Detail",new { id = item.Id})
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>

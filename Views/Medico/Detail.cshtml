@@ -1,0 +1,52 @@
+﻿@model WebClinica.Models.Medico
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Detalles del Medico</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Nombre):
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Nombre)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Apellido):
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Apellido)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Matricula):
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Matricula)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Especialidad):
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Especialidad)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Borrar Medico", "Delete", new { id = Model.Id })
+    </p>
+    <p>
+        @Html.ActionLink("Modificar Medico", "Edit", new { id = Model.Id })
+    </p>
+    <p>
+        @Html.ActionLink("Volver a Index", "Index")
+    </p>
+</body>
+</html>
